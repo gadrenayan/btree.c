@@ -12,6 +12,17 @@ A B-tree implementation in C.
 - 100% code coverage
 - Pretty darn good performance 🚀
 
+## Implementation
+
+1. A B-tree of order M, has Max M-1 Keys and M children.
+2. For eg: order 5, has 4 Keys in internal node and 5 Children.
+3. Every internal node except the root, has at least Ceil[M/2] children.
+4. If Leaf node is not Full, then insert new Key at correct position.
+5. If Leaf node is full, split the node in 2 with smaller half as 1 node.
+   larger half as another node, and the median key is promoted to parent.
+   If parent node is also full, split it as well and repeat till you find
+   another node which can accomodate the corresponding median key.
+
 ## Example
 
 ```c
